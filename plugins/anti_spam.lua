@@ -71,7 +71,7 @@ local function pre_process(msg)
     if msgs > max_msg then
       local user = msg.from.id
       -- Ignore mods,owner and admins
-      if is_momod(msg) then 
+      if is_admin(msg) then 
         return msg
       end
       local chat = msg.to.id
@@ -132,3 +132,7 @@ return {
 }
 
 end
+
+--Edit By @ali_ghoghnoos For SelfBot !
+
+--Our Channel @tlemanager_ch

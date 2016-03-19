@@ -2,10 +2,17 @@
 
 
 **An advanced and powerful SlefBot based on [TeleSeed](https://github.com/SeedTeam/TeleSeed) licensed under the [GNU General Public License](https://github.com/SEEDTEAM/TeleSeed/blob/master/LICENSE)**.
+
+*** NOTE :
+
+** This bot Only have Sudo and Admin,no mod or owner allow !
+**admins have 90% access of bot commands ! Dont give admin rank to anybody !
+
 # Features
 
 * **A powerful antispam system with custom sensitivity for each group**
 * **Multiple realms (admin groups)**
+* **Self Bot !**
 * **Recalcitrant to any kind of spamming (X/Y bots, name/photo changers, etc.)**
 * **Global banning**
 * **Broadcast to all groups**
@@ -14,7 +21,6 @@
 * **Groups, ban and global ban list**
 * **Logging anything that happens in a group**
 * **Invitation by username**
-* **Group administration via private messages**
 * **Only mods, owner and admin can add bots**
 * **Arabic lock**
 * **And more!**
@@ -35,15 +41,17 @@
 		- [Setting rules in realm](#setting-rules-in-realm)
 		- [Locking group names/photos/flood/members in realm](#lock-groups-namefloodphotomember-in-realm)
 		- [Unlocking group names/photos/flood/members](#unlock-groups-namefloodphotomember)
+
 	- [Group settings in realm](#group-setting-in-realm)
 		- [Adding admins](#add-admin)
 		- [Removing admins](#remove-admin)
 		- [Admin/group listing in realm](#adminsgroup-list-in-realm)
 		- [Broadcasting](#broadcast)
 		- [Realm help](#realm-help)
+
 	- [Global ban commands](#global-ban-commands)
-		- [Set group owner](#set-group-owner)
 		- [Bot stats](#bot-stats)
+
 	- [Owner and mod commands](#owners-and-mods-commands)
 		- [Hammer](#hammer)
 		- [Locking a group's name/members/bots/arabic/flood](#group-namememberarabicfloodbots-lock)
@@ -67,21 +75,14 @@
 		- [Group stats](#group-stats)
 		- [Member list](#member-list)
 		- [Group help](#group-help)
+
 	- [In private commands](#in-private-commands)
-		- [Hammer](#hammer)
-		- [Cleaning](#cleaning)
-		- [Setting flood sensitivity](#setting-flood-sensitivity)
-		- [Locking a group's members/name](#lock-groups-membername)
-		- [Unlocking a group's members/name](#unlock-groups-membername)
-		- [Group link](#group-link)
-		- [Changing name/rules](#change-namerulesname)
-		- [Group log](#group-log)
 		- [Join](#join)
+
 - [Installation](#installation)
 	- [One command](#one-command)
 	- [Realm configuration](#realm-configuration)
 - [Support and development](#support-and-development)
-- [Special thanks to:](#special-thanks-to)
 - [Our team!](#our-team)
 
 
@@ -91,7 +92,7 @@
 ### Group creation
 >[!/]creategroup [group name]
 >
->>[!/]creategroup SEED
+>>[!/]creategroup TelemanagerPlus
 >>>will create a group
 >>>
 >>>_Only works in realms for admins but, sudo users can use it everywhere_
@@ -99,7 +100,7 @@
 ### Realm creation
 >[!/]createrealm [realm name]
 >
->>[!/]createrealm SEED
+>>[!/]createrealm TelemanagerPlus
 >>>will create a realm
 >>>
 >>>_Only works in realms for admins but, sudo users can use it everywhere_
@@ -128,7 +129,7 @@
 >>This command will return everything about that group
 >
 >[!/]all [group_id]
->>_Only onwer, admin and sudo users can use this command_
+>>_Only admin and sudo users can use this command_
 
 
 ### Setting description in realm
@@ -200,9 +201,6 @@
 >>[!/]banall 123456789
 >>>This commands will globally ban [id]
 >
->/sync_gbans
->>Sync your global bans with teleseed
->
 >[!/]unbanall [id]
 >>[!/]unbanall 123456789
 >>>This commands will remove [id] from global bans
@@ -220,7 +218,7 @@
 >>>This command will set [User_id] as the owner of [group_id]
 
 ### Bot stats
->[!/]stats teleseed
+>[!/]stats telemanager
 >>This command will return bot stats
 
 # Realm Help
@@ -253,21 +251,21 @@ _Sudo users and admins can also use this commands in all groups_
 >[!/]banlist
 >>This command will return bans list
 
-### group name|member|arabic|flood|bots lock
->[!/]lock [name|member|arabic|flood|bots]
+### group name|member|flood|bots lock
+>[!/]lock [name|member|flood|bots]
 >>[!/]lock flood
->>>This command will lock name|member|arabic|flood|bots of groups
+>>>This command will lock name|member|flood|bots of groups
 
-### group name|member|arabic|flood|bots unlock
->[!/]unlock [name|member|arabic|flood|bots]
+### group name|member|flood|bots unlock
+>[!/]unlock [name|member|flood|bots]
 >>[!/]unlock flood
->>>This command will unlock name|member|arabic|flood|bots of groups
+>>>This command will unlock name|member|flood|bots of groups
 
 ### Group modlist|rules|about|member clean
 >[!/]clean [modlist|rules|about|member]
 >>[!/]clean modlist
 >>>This command will clean modlist|rules|about|member
->>>_/clean member will kick all users except owner,admins and bot and it's for owners only_
+>>>_/clean member will kick all users except admins and bot_
 
 ### Set groups rules|about
 >[!/]set [rules|about] [text]
@@ -288,7 +286,7 @@ _Sudo users and admins can also use this commands in all groups_
 
 ### Changing Group name
 >[!/]setname [name]
->>[!/]setname SEED
+>>[!/]setname TelemanagerPlus
 >>>This command will set [name] as name of groups
 
 ### Group link
@@ -297,15 +295,6 @@ _Sudo users and admins can also use this commands in all groups_
 >
 >[!/]link
 >>This command will return group link
-
-### Promote and demote mods
->[!/]promote [username]
->>[!/]promote @username
->>>This command will promote @username as moderator
->
->[!/]demote [username]
->>[!/]demote @username
->>> This command will demote @username
 
 ### Resolve username
 >[!/]res [username]
@@ -336,10 +325,6 @@ _Sudo users and admins can also use this commands in all groups_
 
 ###Help
 >[!/]help
-
-### Owner
->[!/]owner
->>This command will return owners id
 
 ### Save and get
 >[!/]save [title] [text]
@@ -374,53 +359,6 @@ _Sudo users and admins can also use this commands in all groups_
 # Group Help
 >[!/]help
 >>Get commands list
-
-
-
-## in private commands
-
-**These commands only works in bots private**
-
-### Hammer
->[!/]owners group_id [kick|ban|unban] user_id
->>[!/]owners 1234567 kick 1234567
-
-### cleaning
->[!/]owners group_id clean  [modlist|rules|about]
->>[!/]owners 1234567 clean modlist
-
-### setting flood sensitivity
->[!/]owners group_id setflood value
->>[!/]owners 1234567 setflood 17
-
-### lock groups member|name
->[!/]owners group_id lock [member|name]
->>[!/]owners 1234567 lock member
-
-#### unlock groups member|name
->[!/]owner group_id unlock [member|name]
->>[!/]owners 1234567 unlock name
-
-### Group link
->[!/]owners group_id get link
->>[!/]owners 1234567 get link
->
->[!/]owners group_id new link
->>[!/]owners 1234567 new link
-
-### change name|rules|name
->[!/]changename [group_id] [name]
->>[!/]changename 123456789 SEED
->
->[!/]changrules [group_id] [rules]
->>[!/]changrules 123456789 rules !
->
->[!/]changeabout [group_id] [about]
->>[!/]changeabout 123456789 about !
-
-### Group log
->[!/]loggroup [group_id]
->>[!/]loggroup 123456789
 
 ### Join
 >[!/]oin [group_id]
@@ -473,33 +411,18 @@ Create a realm using the `!createrealm` command.
 Check out this [tutorial by Telegram Geeks](http://telegramgeeks.com/2016/01/teleseed-tutorial/) for further assistance with setup and installation.
 
 **Do not contact us** in private for support.
-Join our bot development group by sending `/join 56670147` to [@TeleSeed](https://telegram.me/TeleSeed)
+Join our bot development group by invite link, in our channel : [@Telemanager_ch](https://telegram.me/telemanager_ch)
 
-# Special thanks to
-[@seyedan25](https://telegram.me/seyedan25)
+***Speacial Tnx To 
+[Hossein](https://telegram.me/NeonGameFun)
 
-For managing [@teleseed](https://telegram.me/TeleSeed) on Telegram.
-
-[@Vamptacus](https://telegram.me/Vamptacus)
-
-For graphic designs.
-
-[topkecleon](https://github.com/topkecleon)
-
-[Juan Potato](https://github.com/JuanPotato)
+For graphic design.
 
 # Our team!
 
-[Alphonse](https://github.com/hmon) ([Telegram](https://telegram.me/iwals))
+My Telegram Id : [@ali_ghoghnoos](telegram.me/ali_ghoghnoos)
 
-[I M /-\ N](https://github.com/imandaneshi) ([Telegram](https://telegram.me/imandaneshi))
 
-[Siyanew](https://github.com/Siyanew) ([Telegram](https://telegram.me/Siyanew))
+###Our Telegram channel:
 
-[Rondoozle](https://github.com/Rondoozle) ([Telegram](https://telegram.me/POTUS))
-
-###Our Telegram channels:
-
-English: [@TeleSeedCH](https://telegram.me/teleseedch)
-
-Persian: [@IranSeed](https://telegram.me/iranseed)
+[@Telemanager_ch](https://telegram.me/telemanager_ch)

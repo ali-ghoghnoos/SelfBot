@@ -81,7 +81,7 @@
 
 - [Installation](#installation)
 	- [One command](#one-command)
-	- [Fixing Luarock errors](#LuaRock-Problem)
+	- [Fixing Luarock errors](#luarock-problem)
 	- [Realm configuration](#realm-configuration)
 - [Support and development](#support-and-development)
 - [Our team!](#our-team)
@@ -391,7 +391,7 @@ sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgr
 ```
 
 ### LuaRock Problem
-**If you have luarock Problem in installtion,** [See This post On Our Channel](https://telegram.me/telemanager_ch/248)
+**If you have luarock Problem in installing bot,** [See This post On Our Channel](https://telegram.me/telemanager_ch/248)
 
 ### Realm configuration
 

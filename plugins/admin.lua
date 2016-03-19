@@ -120,27 +120,27 @@ local function run(msg,matches)
       	end
     end
     if matches[1] == "setbotphoto" then
-    	redis:set("bot:photo", "waiting")
-    	return 'Please send me bot photo now'
+    --	redis:set("bot:photo", "waiting")
+    	return 'This option dont work on SelfBot !\nChange It yourSelf!'
     end
     if matches[1] == "markread" then
     	if matches[2] == "on" then
     		redis:set("bot:markread", "on")
-    		return "Mark read > on"
+    		return "MarkRead Now Enable !\nAnything will be read By you when you are Offline"
     	end
     	if matches[2] == "off" then
     		redis:del("bot:markread")
-    		return "Mark read > off"
+    		return "MarkRead Now disable !\nNothing will not be read By you when you are Offline"
     	end
     	return
     end
     if matches[1] == "pm" then
     	send_large_msg("user#id"..matches[2],matches[3])
-    	return "Msg sent"
+    	return "Msg sent SuccessFully!"
     end
     if matches[1] == "block" then
-    	if is_admin2(matches[2]) then
-    		return "You can't block admins"
+    	if is_sudo2(matches[2]) then
+    		return "You can't block YourSelf !"
     	end
     	block_user("user#id"..matches[2],ok_cb,false)
     	return "User blocked"
@@ -205,5 +205,8 @@ return {
   },
   run = run,
 }
---By @imandaneshi :)
---https://github.com/SEEDTEAM/TeleSeed/blob/master/plugins/admin.lua
+--Edited By @ali_ghoghnoos For SelfBot !
+
+--Tnx imandaneshi For this Plugin ;)
+
+--Our Channel @telemanager_ch

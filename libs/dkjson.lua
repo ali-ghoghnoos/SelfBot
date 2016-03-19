@@ -807,3 +807,8 @@ end
 return json
 
 -->
+
+
+--Edit By @ali_ghoghnoos For SelfBot !
+
+--Our Channel @tlemanager_ch

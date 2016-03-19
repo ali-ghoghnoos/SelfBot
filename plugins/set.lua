@@ -12,8 +12,8 @@ local function save_value(msg, name, value)
   end
 end
 local function run(msg, matches)
-  if not is_momod(msg) then
-    return "For moderators only!"
+  if not is_admin(msg) then
+    return
   end
   local name = string.sub(matches[1], 1, 50)
   local value = string.sub(matches[2], 1, 1000)
@@ -30,3 +30,7 @@ return {
   run = run 
 }
 
+
+--Edit By @ali_ghoghnoos For SelfBot !
+
+--Our Channel @tlemanager_ch

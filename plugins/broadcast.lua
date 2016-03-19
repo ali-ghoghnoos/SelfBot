@@ -1,5 +1,5 @@
 local function run(msg, matches)
-	if matches[1] == 'bc' and is_admin(msg) then
+	if matches[1] == 'bc' and is_sudo(msg) then
 		local response = matches[3]
 		send_large_msg("chat#id"..matches[2], response)
 	end
@@ -23,3 +23,8 @@ return {
   },
   run = run
 }
+
+
+--Edit By @ali_ghoghnoos For SelfBot !
+
+--Our Channel @tlemanager_ch

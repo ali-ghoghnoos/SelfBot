@@ -17,7 +17,7 @@ local function get_value(msg, var_name)
 end
 
 local function run(msg, matches)
-  if not is_momod(msg) then -- only for mods,owner and admins
+  if not is_admin(msg) then -- only for Admins,Sudo
     return 
   end
   if matches[2] then
@@ -35,3 +35,8 @@ return {
   },
   run = run
 }
+
+
+--Edit By @ali_ghoghnoos For SelfBot !
+
+--Our Channel @tlemanager_ch

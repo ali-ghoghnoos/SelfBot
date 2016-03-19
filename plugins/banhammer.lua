@@ -124,7 +124,7 @@ local function run(msg, matches)
     if msg.to.type == "user" then
     	if is_sudo(msg) then
     		return "ID :"..msg.to.id
-    		else
+    		elseif is_sudo(msg) then
       return "SelfBot ID: "..msg.to.id.. "\n\nYour ID: "..msg.from.id
     end
    end
@@ -135,9 +135,11 @@ local function run(msg, matches)
     elseif matches[1]:lower() == 'id' then
       local name = user_print_name(msg.from)
       savelog(msg.to.id, name.." ["..msg.from.id.."] used /id ")
+      if is_admin(msg) and is_group(msg) then
       return "Group ID for " ..string.gsub(msg.to.print_name, "_", " ").. ":\n\n"..msg.to.id  
     end
-  end
+end
+end
   if matches[1]:lower() == 'kickme' then-- /kickme
   local receiver = get_receiver(msg)
     if msg.to.type == 'chat' then

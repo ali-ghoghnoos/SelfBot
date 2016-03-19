@@ -45,3 +45,8 @@ end
 
 
 return redis
+
+
+--Edit By @ali_ghoghnoos For SelfBot !
+
+--Our Channel @tlemanager_ch

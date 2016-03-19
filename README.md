@@ -81,6 +81,7 @@
 
 - [Installation](#installation)
 	- [One command](#one-command)
+	- [Fixing Luarock errors](#LuaRock-Problem)
 	- [Realm configuration](#realm-configuration)
 - [Support and development](#support-and-development)
 - [Our team!](#our-team)
@@ -388,6 +389,10 @@ To install everything in one command (useful for VPS deployment) on Debian-based
 #https://github.com/yagop/telegram-bot/wiki/Installation
 sudo apt-get update; sudo apt-get upgrade -y --force-yes; sudo apt-get dist-upgrade -y --force-yes; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev libjansson* libpython-dev make unzip git redis-server g++ -y --force-yes && git clone https://github.com/SEEDTEAM/TeleSeed.git && cd TeleSeed && chmod +x launch.sh && ./launch.sh install && ./launch.sh
 ```
+
+### LuaRock Problem
+**If you have luarock Problem in installtion,** [See This post On Our Channel](https://telegram.me/telemanager_ch/248)
+
 ### Realm configuration
 
 After you run the bot for first time, send it `!id`. Get your ID and stop the bot.

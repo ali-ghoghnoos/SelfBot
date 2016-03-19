@@ -14,13 +14,13 @@ function run(msg, matches)
   local data = load_data(_config.moderation.data)
   if not is_realm(msg) then
     if data[tostring(msg.to.id)] and data[tostring(msg.to.id)]['settings']['lock_member'] == 'yes' and not is_admin(msg) then
-		  return 'Group is private.'
+		  return
     end
   end
   if msg.to.type ~= 'chat' then 
     return
   end
-  if not is_momod(msg) then
+  if not is_admin(msg) then
     return
   end
   --if not is_admin(msg) then -- For admins only !
@@ -39,3 +39,8 @@ return {
 }
 
 end
+
+
+--Edit By @ali_ghoghnoos For SelfBot !
+
+--Our Channel @tlemanager_ch

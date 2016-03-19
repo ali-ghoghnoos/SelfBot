@@ -413,10 +413,10 @@ Check out this [tutorial by Telegram Geeks](http://telegramgeeks.com/2016/01/tel
 **Do not contact us** in private for support.
 Join our bot development group by invite link, in our channel : [@Telemanager_ch](https://telegram.me/telemanager_ch)
 
-***Speacial Tnx To 
+***Speacial Tnx To***
 [Hossein](https://telegram.me/NeonGameFun)
 
-For graphic design.
+_For graphic design._
 
 # Our team!
 

@@ -3,7 +3,7 @@
 
 **An advanced and powerful SlefBot based on [TeleSeed](https://github.com/SeedTeam/TeleSeed) licensed under the [GNU General Public License](https://github.com/SEEDTEAM/TeleSeed/blob/master/LICENSE)**.
 
-*** NOTE :***
+** NOTE :**
 
 ** This bot Only have Sudo and Admin,no mod or owner allow !**
 **admins have 90% access of bot commands ! Dont give admin rank to anybody !**

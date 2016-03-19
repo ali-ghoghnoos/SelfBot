@@ -140,7 +140,7 @@
 
 ### Setting group name in realm
 > [!/]setname [group_id] [text]
->>[!/]setname 123456789 SEED
+>>[!/]setname 123456789 Telemanagerplus
 >>>This command will set [text] as name of [group_id]
 
 ### Setting rules in realm

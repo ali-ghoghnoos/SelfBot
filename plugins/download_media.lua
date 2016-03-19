@@ -7,7 +7,7 @@ local function callback(extra, success, result) -- Calback for load_photo in lin
 end
 
 local function run(msg, matches)
-  if not is_momod(msg) then -- Will download images only from mods,owner and admins
+  if not is_admin(msg) then -- Will download images only from Admins,Sudo
     return
   end
   if msg.media then
@@ -31,3 +31,8 @@ return {
 	},
   pre_process = pre_process
 }
+
+
+--Edit By @ali_ghoghnoos For SelfBot !
+
+--Our Channel @tlemanager_ch

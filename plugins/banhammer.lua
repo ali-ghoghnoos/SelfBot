@@ -30,10 +30,10 @@ local function pre_process(msg)
         local banhash = 'addedbanuser:'..msg.to.id..':'..msg.from.id
         local banaddredis = redis:get(banhash) 
         if banaddredis then 
-          if tonumber(banaddredis) == 4 and not is_owner(msg) then 
+          if tonumber(banaddredis) == 4 and not is_admin(msg) then 
             kick_user(msg.from.id, msg.to.id)-- Kick user who adds ban ppl more than 3 times
           end
-          if tonumber(banaddredis) ==  8 and not is_owner(msg) then 
+          if tonumber(banaddredis) ==  8 and not is_admin(msg) then 
             ban_user(msg.from.id, msg.to.id)-- Kick user who adds ban ppl more than 7 times
             local banhash = 'addedbanuser:'..msg.to.id..':'..msg.from.id
             redis:set(banhash, 0)-- Reset the Counter
@@ -48,7 +48,7 @@ local function pre_process(msg)
         end
       end
     if msg.action.user.username ~= nil then
-      if string.sub(msg.action.user.username:lower(), -3) == 'bot' and not is_momod(msg) and bots_protection == "yes" then --- Will kick bots added by normal users
+      if string.sub(msg.action.user.username:lower(), -3) == 'bot' and not is_admin(msg) and bots_protection == "yes" then --- Will kick bots added by normal users
         local name = user_print_name(msg.from)
           savelog(msg.to.id, name.." ["..msg.from.id.."] added a bot > @".. msg.action.user.username)-- Save to logs
           kick_user(msg.action.user.id, msg.to.id)
@@ -95,13 +95,13 @@ local function kick_ban_res(extra, success, result)
          if member_id == from_id then
              return send_large_msg(receiver, "You can't kick yourself")
          end
-         if is_momod2(member_id, chat_id) and not is_admin2(sender) then
-            return send_large_msg(receiver, "You can't kick mods/owner/admins")
+         if is_member2(member_id, chat_id) and not is_admin2(sender) then
+            return send_large_msg(receiver, "You can't kick YourSelf/admins")
          end
          return kick_user(member_id, chat_id)
       elseif get_cmd == 'ban' then
-        if is_momod2(member_id, chat_id) and not is_admin2(sender) then
-          return send_large_msg(receiver, "You can't ban mods/owner/admins")
+        if is_member2(member_id, chat_id) and not is_admin2(sender) then
+          return send_large_msg(receiver, "You can't ban YourSelf/admins")
         end
         send_large_msg(receiver, 'User @'..member..' ['..member_id..'] banned')
         return ban_user(member_id, chat_id)
@@ -122,8 +122,12 @@ end
 local function run(msg, matches)
  if matches[1]:lower() == 'id' then
     if msg.to.type == "user" then
-      return "Bot ID: "..msg.to.id.. "\n\nYour ID: "..msg.from.id
+    	if is_sudo(msg) then
+    		return "ID :"..msg.to.id
+    		else
+      return "SelfBot ID: "..msg.to.id.. "\n\nYour ID: "..msg.from.id
     end
+   end
     if type(msg.reply_id) ~= "nil" then
       local name = user_print_name(msg.from)
         savelog(msg.to.id, name.." ["..msg.from.id.."] used /id ")
@@ -137,13 +141,16 @@ local function run(msg, matches)
   if matches[1]:lower() == 'kickme' then-- /kickme
   local receiver = get_receiver(msg)
     if msg.to.type == 'chat' then
+    	if is_sudo(msg) then 
+    		return 'Use !leave'
+    	else
       local name = user_print_name(msg.from)
       savelog(msg.to.id, name.." ["..msg.from.id.."] left using kickme ")-- Save to logs
       chat_del_user("chat#id"..msg.to.id, "user#id"..msg.from.id, ok_cb, false)
     end
   end
-
-  if not is_momod(msg) then -- Ignore normal users 
+ end
+  if not is_admin(msg) then -- Ignore normal users 
     return
   end
 
@@ -168,8 +175,8 @@ local function run(msg, matches)
         if tonumber(matches[2]) == tonumber(our_id) then 
          	return
         end
-        if not is_admin(msg) and is_momod2(matches[2], msg.to.id) then
-          	return "you can't ban mods/owner/admins"
+        if not is_sudo(msg) and is_admin2(matches[2], msg.to.id) then
+          	return "you can't ban Me!"
         end
         if tonumber(matches[2]) == tonumber(msg.from.id) then
           	return "You can't ban your self !"
@@ -203,7 +210,7 @@ local function run(msg, matches)
         	redis:srem(hash, user_id)
         	local name = user_print_name(msg.from)
         	savelog(msg.to.id, name.." ["..msg.from.id.."] unbaned user ".. matches[2])
-        	return 'User '..user_id..' unbanned'
+        	return 'User Unbanned!\nID : '..user_id
       else
 		local cbres_extra = {
 			chat_id = msg.to.id,
@@ -217,7 +224,7 @@ local function run(msg, matches)
  end
 
 if matches[1]:lower() == 'kick' then
-    if type(msg.reply_id)~="nil" and is_momod(msg) then
+    if type(msg.reply_id)~="nil" and is_admin(msg) then
       if is_admin(msg) then
         local msgr = get_message(msg.reply_id,Kick_by_reply_admins, false)
       else
@@ -229,8 +236,8 @@ if matches[1]:lower() == 'kick' then
 		if tonumber(matches[2]) == tonumber(our_id) then 
 			return
 		end
-		if not is_admin(msg) and is_momod2(matches[2], msg.to.id) then
-			return "you can't kick mods/owner/admins"
+		if not is_sudo(msg) and is_admin2(matches[2], msg.to.id) then
+			return "you can't kick Me!"
 		end
 		if tonumber(matches[2]) == tonumber(msg.from.id) then
 			return "You can't kick your self !"
@@ -329,3 +336,7 @@ return {
   pre_process = pre_process
 }
 
+
+--Edit By @ali_ghoghnoos For SelfBot !
+
+--Our Channel @tlemanager_ch

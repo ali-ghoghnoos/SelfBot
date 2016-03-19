@@ -99,3 +99,8 @@ end
 
 return mimetype
 end
+
+
+--Edit By @ali_ghoghnoos For SelfBot !
+
+--Our Channel @tlemanager_ch

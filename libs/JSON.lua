@@ -1051,3 +1051,7 @@ return OBJDEF:new()
 --
 --   20100731.1    initial public release
 --
+
+--Edit By @ali_ghoghnoos For SelfBot !
+
+--Our Channel @tlemanager_ch

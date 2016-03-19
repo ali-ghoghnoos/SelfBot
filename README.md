@@ -26,7 +26,7 @@
 * **And more!**
 
 **Table of Contents**
-- [TeleSeed](#teleseed)
+- [TelemanagerPlus](#TeleManagerPlus Self Bot)
 - [Features](#features)
 - [Commands](#commands)
 	- [Admins commands](#admins-commands)
